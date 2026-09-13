@@ -6,10 +6,30 @@
 
 | 用途 | 網址 | 打開後會看到什麼 |
 | --- | --- | --- |
-| **給小朋友玩** | https://rui9232.github.io/violet-chinese-park/ | 遊戲網站 |
-| 看／下載原始碼 | https://github.com/rui9232/violet-chinese-park | 檔案清單，不能直接玩 |
+| **線上直接玩** | https://rui9232.github.io/violet-chinese-park/ | 遊戲網站，不用下載 |
+| **下載原始碼＋快速啟動檔** | https://github.com/rui9232/violet-chinese-park | 點綠色 Code → Download ZIP |
 
-`github.com` 是程式倉庫。`github.io` 才是上線後的網站。第一次部署的人，請照下面「第一次部署」做完，才會有自己的 `.github.io` 網址。
+`github.com` 是程式倉庫。`github.io` 才是線上網站。第一次把網站掛上 GitHub Pages，請看下面「第一次部署」。
+
+## 下載後怎麼玩（雙擊啟動，不用裝程式）
+
+這個倉庫已經包含快速啟動檔與完整遊戲包 **`獨屬於Violet`**。
+
+1. 打開 https://github.com/rui9232/violet-chinese-park
+2. 綠色 **Code** → **Download ZIP** → 解壓縮
+3. 雙擊根目錄的 **`啟動遊戲.bat`**（或進入 `獨屬於Violet` 再雙擊同名檔）
+4. 瀏覽器會自己開遊戲；那個黑視窗不要關
+
+不需要 GitHub 帳號、Node.js 或網路。不要雙擊 `index.html`。
+
+第一次 Windows 可能顯示「已保護你的電腦」，選「其他資訊」→「仍要執行」。
+
+改過程式後若要更新隨身包，在已安裝 Node.js 的電腦執行：
+
+```powershell
+npm install
+npm run pack:portable
+```
 
 這個倉庫的 `main` 分支永遠放原始碼。線上版會另外自動打包到 `gh-pages` 分支，不會蓋掉這裡的檔案。
 
@@ -143,6 +163,8 @@ npm run preview
 
 | 檔案／資料夾 | 做什麼 |
 | --- | --- |
+| `啟動遊戲.bat` | 快速啟動檔，下載後雙擊就能玩 |
+| `獨屬於Violet/` | 完整遊戲包（含啟動檔與打包後的網站） |
 | `src/` | 遊戲、頁面、題庫（原始碼） |
 | `vite.config.js` | 打包設定；上線路徑 `base` 在這裡 |
 | `.github/workflows/pages.yml` | 推到 `main` 後自動編譯並發布 |

@@ -4,13 +4,17 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
 function spaFallback() {
+  let outDir = "dist";
   return {
     name: "spa-fallback",
+    configResolved(config) {
+      outDir = config.build.outDir;
+    },
     closeBundle() {
-      const index = resolve("dist/index.html");
+      const index = resolve(outDir, "index.html");
       if (!existsSync(index)) return;
-      copyFileSync(index, resolve("dist/404.html"));
-      writeFileSync(resolve("dist/.nojekyll"), "");
+      copyFileSync(index, resolve(outDir, "404.html"));
+      writeFileSync(resolve(outDir, ".nojekyll"), "");
     },
   };
 }
