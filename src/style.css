@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#app {
+  min-height: 100%;
+  background: radial-gradient(circle at top, #ffe8a3 0%, #fff8e7 42%, #d9f2ff 100%);
+}
+body {
+  overflow-x: hidden;
+}
+
+.float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+.float-delay {
+  animation: float-slow 5s ease-in-out 0.8s infinite;
+}
+.bounce-in {
+  animation: bounce-in 0.55s cubic-bezier(0.22, 1.4, 0.36, 1) both;
+}
+.pop {
+  animation: pop 0.45s cubic-bezier(0.22, 1.4, 0.36, 1) both;
+}
+.shake {
+  animation: shake 0.45s ease-in-out both;
+}
+.slide-up {
+  animation: slide-up 0.4s ease-out both;
+}
+.pulse-soft {
+  animation: pulse-soft 1.6s ease-in-out infinite;
+}
+.mascot-idle {
+  animation: mascot-idle 2.4s ease-in-out infinite;
+}
+.mascot-jump {
+  animation: mascot-jump 0.7s ease-in-out infinite;
+}
+.star-burst {
+  animation: star-burst 0.8s ease-out forwards;
+}
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card-3d.is-flipped {
+  transform: rotateY(180deg);
+}
+.card-face {
+  backface-visibility: hidden;
+}
+.sticker-card {
+  position: relative;
+  border-radius: 2rem;
+  background: #fffdf8;
+  box-shadow: 0 10px 0 rgba(36, 48, 94, 0.16);
+  border: 3px dashed rgba(255, 107, 107, 0.35);
+}
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.game-tile {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  text-align: left;
+}
+.studio-input {
+  width: 100%;
+  border-radius: 1rem;
+  background: #fff8e7;
+  padding: 0.7rem 0.9rem;
+  font-weight: 700;
+  outline: none;
+}
+.studio-input:focus {
+  box-shadow: 0 0 0 3px rgba(123, 44, 191, 0.25);
+}
+.prompt-bar {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  z-index: 20;
+  padding: 0.55rem 0.75rem;
+  text-align: center;
+  font-weight: 900;
+  font-size: 0.95rem;
+  background: rgba(255, 253, 248, 0.88);
+  pointer-events: none;
+}
+.tape {
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  width: 88px;
+  height: 22px;
+  background: rgba(255, 183, 3, 0.75);
+  transform: rotate(-8deg);
+}
+.island {
+  box-shadow: 0 12px 0 rgba(36, 48, 94, 0.2);
+  border: 6px solid rgba(255, 255, 255, 0.35);
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.4) rotate(-8deg);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0.85);
+  }
+  60% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-8px) rotate(-2deg);
+  }
+  75% {
+    transform: translateX(8px) rotate(2deg);
+  }
+}
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulse-soft {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+@keyframes mascot-idle {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+@keyframes mascot-jump {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(-22px) scale(1.08);
+  }
+}
+@keyframes star-burst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.4);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(1.2);
+  }
+}
+.dash-road {
+  background: repeating-linear-gradient(180deg, #7ed957 0 36px, #9be86a 36px 72px);
+  background-size: 100% 72px;
+  animation: road-scroll 2.6s linear infinite;
+}
+.mole-up {
+  animation: mole-up 0.35s cubic-bezier(0.22, 1.4, 0.36, 1) both;
+}
+.hole {
+  background: radial-gradient(circle at 50% 35%, #5a3418 0%, #1c0e08 72%);
+  box-shadow: inset 0 10px 0 rgba(0, 0, 0, 0.25);
+}
+.train-car {
+  min-width: 3.2rem;
+  min-height: 3.2rem;
+}
+
+@keyframes road-scroll {
+  to {
+    background-position: 0 72px;
+  }
+}
+@keyframes mole-up {
+  from {
+    transform: translateY(80%) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
