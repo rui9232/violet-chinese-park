@@ -5,7 +5,7 @@ import GameView from "./views/GameView.vue";
 import StudioView from "./views/StudioView.vue";
 
 export default createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: "/", component: HomeView },
     { path: "/grade/:grade", component: GradeView },
