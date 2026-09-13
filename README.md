@@ -30,6 +30,8 @@ npm run dev
 
 改完並推到 GitHub 的 `main` 後，線上網站會自動更新。
 
+第一次上線請到倉庫 **Settings → Pages**，Source 選 **Deploy from a branch**，Branch 選 `gh-pages`、資料夾選 `/ (root)`，再按 Save。之後就不用再改。
+
 ## 老師怎麼出題
 
 1. 打開網站後點「去蓋關卡」
